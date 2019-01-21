@@ -1,0 +1,11 @@
+<!-- <p>
+  catalogue works!
+</p>
+<button (click)="test()">TEST</button> -->
+
+
+<ul *ngFor="let ctg of api.catalogs">
+  <li (click)="showSubCatalog(ctg.value)">
+    <div class="ctg">{{ctg.name}}</div>
+  </li>
+</ul>
