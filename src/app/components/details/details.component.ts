@@ -64,7 +64,7 @@ export class DetailsComponent implements OnInit {
     share() {
     this.shareSvc.share({
       title: 'Info about ' + this.commentTitle,
-      url: 'https://developers.google.com/web',
+      url: window.location.href,
     }).then(response => {
       console.log(response);
     }).catch(er => {
