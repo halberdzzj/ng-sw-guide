@@ -57,6 +57,7 @@ export class DetailsComponent implements OnInit {
     }
 
     this.commentStorage.setItem(this.commentTitle, this.comments);
+    this.newComment = '';
   }
 
 }

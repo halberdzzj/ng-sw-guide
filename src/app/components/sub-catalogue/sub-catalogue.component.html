@@ -3,20 +3,28 @@
 </p> -->
 
 
-<div>
-  <button (click)="goBack()">Back</button>
+<!-- <div> -->
+<div (click)="goBack()">
+  <p class="back">
+    Back </p>
 
-  <ul *ngIf="type != 'films'">
-    <li *ngFor="let o of dataResults.results" (click)="toDetails(o.url)">
-      <div class="subctg">{{o.name}}</div>
-    </li>
-  </ul>
-
-  <ul *ngIf="type == 'films'">
-    <li *ngFor="let o of dataResults.results" (click)="toDetails(o.url)">
-      <div>{{o.title}}</div>
-    </li>
-  </ul>
-  <button *ngIf="!!dataResults.previous" (click)="goPre()">Previous</button>
-  <button *ngIf="!!dataResults.next" (click)="goNext()">Next</button>
 </div>
+  <div class="float-section">
+      <ul *ngIf="type != 'films'">
+        <li *ngFor="let o of dataResults.results" (click)="toDetails(o.url)">
+          <div class="subctg">{{o.name}}</div>
+        </li>
+      </ul>
+
+      <ul *ngIf="type == 'films'">
+        <li *ngFor="let o of dataResults.results" (click)="toDetails(o.url)">
+          <div class="subctg">{{o.title}}</div>
+        </li>
+      </ul>
+</div>
+<div class="nav-section"><button [disabled]="!dataResults.previous" (click)="goPre()">
+    <</button><button [disabled]="!dataResults.next" (click)="goNext()">></button></div>
+<div style="height: 30px;clear: both;">
+
+</div>
+    <!-- </div> -->

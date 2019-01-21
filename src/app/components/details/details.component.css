@@ -1,0 +1,31 @@
+p.back{
+    margin-left: 15%;
+    text-decoration: underline;
+}
+
+p.back:hover, p.back:focus{
+    cursor: pointer;
+}
+
+div.wrapper{
+    width: 80%;
+    margin:0 auto;
+    /* border: 1px white solid; */
+}
+
+.img-div{
+    max-width: 100%;
+    text-align: center;
+}
+
+div.info{
+    margin-left:16%;
+}
+
+div.comment{
+    width: 70%;
+    margin: 0 auto;
+    /* border: 1px red solid; */
+    text-align: center;
+}
+

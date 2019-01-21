@@ -1,0 +1,23 @@
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.ctg{
+    width: 30%;
+    margin: 20px auto;
+    padding: 10px 0;
+    text-align: center;
+    border: 2px inset black;
+
+    /* border: 1px solid red; */
+}
+
+.ctg:hover, .ctg:focus{
+    cursor: pointer;
+    border: 2px inset #4cdbff;
+    border-radius: 1.2em;
+    background-color: #575859;
+    transition: all 0.2s ease;
+
+}

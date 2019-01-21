@@ -1,0 +1,50 @@
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.subctg{
+    width: 30%;
+    margin: 5px auto;
+    padding: 10px 0;
+    text-align: center;
+    border: 2px inset black;
+
+    /* border: 1px solid red; */
+}
+
+.subctg:hover, .subctg:focus{
+    cursor: pointer;
+    border: 2px inset #ff569a;
+    border-radius: 1.2em;
+    background-color: #726f70;
+    transition: all 0.2s ease;
+
+}
+
+p.back{
+    margin-left: 15%;
+    text-decoration: underline;
+}
+
+p.back:hover, p.back:focus{
+    cursor: pointer;
+}
+.nav-section{
+    font-size: 2.5em;
+    float: right;
+}
+
+
+.nav-section > button:hover{
+    cursor: pointer;
+}
+.nav-section > button:disabled{
+    color: #726f70;
+    border: #726f70 1px dotted;
+    cursor: auto;
+
+}
+
+
+
