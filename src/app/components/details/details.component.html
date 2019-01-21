@@ -1,11 +1,12 @@
 <p class="back" (click)="goBack()">Back</p>
-<!-- <div>
-        <button (click)="share()">Share</button>
-    </div> -->
+<!-- <div> -->
+<!-- </div> -->
 <!-- Img -->
 <div class="wrapper">
     <div class="img-div">
-        <img [src]="imgSrc" width="40%">
+        <img [src]="imgSrc" width="40%"> 
+        <br /><button (click)="share()">Share</button>
+
     </div>
     <div class="comment">
         <fieldset *ngIf="comments">
@@ -13,7 +14,8 @@
             <p>{{comments}}</p>
         </fieldset>
 
-        <input placeholder="New comment" style="margin-top: 10px;" [(ngModel)]="newComment"><button style="margin-left:10px;" (click)="addComment()">Add</button>
+        <input placeholder="New comment" style="margin-top: 10px;" [(ngModel)]="newComment"><button style="margin-left:10px;"
+            (click)="addComment()">Add</button>
 
     </div>
     <div [ngSwitch]="paramData.sub" style="margin-top: 20px;">

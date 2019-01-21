@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Location } from '@angular/common';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'app-details',
@@ -10,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private locationCtrl: Location) {
+  constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private locationCtrl: Location, private shareSvc: NgNavigatorShareService) {
     this.paramData = this.activatedRoute.snapshot.params;
 
     if (this.paramData.sub == 'people') {
@@ -58,6 +59,17 @@ export class DetailsComponent implements OnInit {
 
     this.commentStorage.setItem(this.commentTitle, this.comments);
     this.newComment = '';
+  }
+
+    share() {
+    this.shareSvc.share({
+      title: 'Info about ' + this.commentTitle,
+      url: 'https://developers.google.com/web',
+    }).then(response => {
+      console.log(response);
+    }).catch(er => {
+      console.log(er);
+    });
   }
 
 }
