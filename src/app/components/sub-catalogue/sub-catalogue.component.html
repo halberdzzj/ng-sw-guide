@@ -1,3 +1,22 @@
-<p>
+<!-- <p>
   sub-catalogue works!
-</p>
+</p> -->
+
+
+<div>
+  <button (click)="goBack()">Back</button>
+
+  <ul *ngIf="type != 'films'">
+    <li *ngFor="let o of dataResults.results" (click)="toDetails(o.url)">
+      <div class="subctg">{{o.name}}</div>
+    </li>
+  </ul>
+
+  <ul *ngIf="type == 'films'">
+    <li *ngFor="let o of dataResults.results" (click)="toDetails(o.url)">
+      <div>{{o.title}}</div>
+    </li>
+  </ul>
+  <button *ngIf="!!dataResults.previous" (click)="goPre()">Previous</button>
+  <button *ngIf="!!dataResults.next" (click)="goNext()">Next</button>
+</div>

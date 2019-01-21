@@ -1,3 +1,142 @@
-<p>
-  details works!
-</p>
+<div class="wrapper" [ngSwitch]="paramData.sub">
+    <button (click)="goBack()">Back</button>
+    <div>
+        <button (click)="share()">Share</button>
+    </div>
+    <!-- Img -->
+    <div>
+        <img [src]="imgSrc" width="50%">
+    </div>
+    <!-- character -->
+    <div *ngSwitchCase="'people'">
+        Name: {{info.name}}
+        <br />
+        Gender: {{info.gender}}
+        <br />
+        Birth year: {{info.birth_year}}
+        <br />
+        Height: {{info.height}}
+        <br />
+        Mass: {{info.mass}}
+        <br />
+        Skin color: {{info.skin_color}}
+        <br />
+        Eye color: {{info.eye_color}}
+        <br />
+    </div>
+    <!-- +++++++++++++++++++++++++++ -->
+    <!-- planet -->
+    <div *ngSwitchCase="'planets'">
+        Name: {{info.name}}
+        <br />
+        Diameter: {{info.diameter}}
+        <br />
+        Gravity: {{info.gravity}}
+        <br />
+        Orbital period: {{info.orbital_period}}
+        <br />
+        Rotation period: {{info.rotation_period}}
+        <br />
+        Climate: {{info.climate}}
+        <br />
+        Terrain: {{info.terrain}}
+        <br />
+        Surface water: {{info.surface_water}}
+    </div>
+    <!-- +++++++++++++++++++++++++++ -->
+    <!-- film -->
+    <div *ngSwitchCase="'films'">
+        Title: {{info.title}}
+        <br />
+        Episode ID: {{info.episode_id}}
+        <br />
+        Release data: {{info.release_date}}
+        <br />
+        Director: {{info.director}}
+        <br />
+        Producer: {{info.producer}}
+        <p>{{info.opening_crawl}}</p>
+    </div>
+    <!-- +++++++++++++++++++++++++++ -->
+    <!-- specie -->
+    <div *ngSwitchCase="'species'">
+        Name: {{info.name}}
+        <br />
+        Classification: {{info.classification}}
+        <br />
+        Language: {{info.language}}
+        <br />
+        Skin colors: {{info.skin_colors}}
+        <br />
+        Hair colors: {{info.hair_colors}}
+        <br />
+        Eye colors: {{info.eye_colors}}
+        <br />
+        Average height: {{info.average_height}}
+        <br />
+        Average lifespan: {{info.average_lifespan}}
+        <br />
+        Designation: {{info.designation}}
+    </div>
+    <!-- +++++++++++++++++++++++++++ -->
+    <!-- vehicle -->
+    <div *ngSwitchCase="'vehicles'">
+        Name: {{info.name}}
+        <br />
+        Model: {{info.model}}
+        <br />
+        Class: {{info.class}}
+        <br />
+        Manufacturer: {{info.manufacturer}}
+        <br />
+        Length: {{info.length}}
+        <br />
+        Max atmosphering speed: {{info.max_atmosphering_speed}}
+        <br />
+        Consumables: {{info.consumables}}
+        <br />
+        Cost in credits: {{info.cost_in_credits}}
+        <br />
+        Crew: {{info.crew}}
+        <br />
+        Passengers: {{info.passengers}}
+        <br />
+        Cargo capacity: {{info.cargo_capacity}}
+    </div>
+    <!-- +++++++++++++++++++++++++++ -->
+    <!-- starship -->
+    <div *ngSwitchCase="'starships'">
+        Name: {{info.name}}
+        <br />
+        Model: {{info.model}}
+        <br />
+        Class: {{info.starship_class}}
+        <br />
+        Manufacturer: {{info.manufacturer}}
+        <br />
+        Length: {{info.length}}
+        <br />
+        Max atmosphering speed: {{info.max_atmosphering_speed}}
+        <br />
+        Hyperdrive rating: {{info.hyperdrive_rating}}
+        <br />
+        MGLT: {{info.MGLT}}
+        <br />
+        Consumables: {{info.consumables}}
+        <br />
+        Cost in credits: {{info.cost_in_credits}}
+        <br />
+        Crew: {{info.crew}}
+        <br />
+        Passengers: {{info.passengers}}
+        <br />
+        Cargo capacity: {{info.cargo_capacity}}
+    </div>
+    <div class="comment">
+        <p *ngIf="comments">{{comments}}</p>
+    </div>
+    <div>
+        <input [(ngModel)]="newComment"><button (click)="addComment()">Submit</button>
+    </div>
+
+</div>
